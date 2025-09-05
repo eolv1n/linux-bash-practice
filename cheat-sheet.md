@@ -54,6 +54,11 @@
 - `awk -F: '{print $1, $7}' /etc/passwd` — выбрать поля
 - `... | awk '{sum+=$1} END{print sum}'` — агрегаты (сумма/счётчик)
 
+### Журналы (systemd-journald)
+- `journalctl -u sshd --since "7 days ago"` — записи юнита sshd за неделю
+- `journalctl -t sshd` — отфильтровать по идентификатору (tag)
+- У систем с journald может не быть `/var/log/auth.log` → искать через `journalctl`
+
 ---
 
 ## Git
